@@ -129,7 +129,7 @@ if __name__=="__main__":
     main()'''
 
 #program to print fibanacci of a number using recursion
-def fib(n):
+"""def fib(n):
     if n==0:
         return 0
     if n==1:
@@ -141,7 +141,52 @@ def main():
     n=int(input ("enter a number: "))
     print(fib(n))
 if __name__=="__main__":
+    main()"""
+
+
+#Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
+#brute force appraoch
+"""def find_power(x,n):
+    neg=False
+    if n<0:
+        neg=True
+        n=-n
+    ans=1
+    for i in range(n):
+        ans=ans*x
+    if neg:
+        ans=1/ans
+    return ans 
+def main():
+    x=int(input("enter an integer: "))
+    n=int(input("enter the power to be rised: "))
+    print(find_power(x,n))
+if __name__=="__main__":
+    main()"""
+
+#optimal approach
+def find_power(x,n):
+    if n==0:
+        return 1
+    if n<0:
+        x=1/x
+        n=-n
+    ans=1
+    while n>0:
+        if n%2==1:
+            ans*=x
+        x*=x
+        n//=2
+    return ans
+def main():
+    x=int(input("enter an integer: "))
+    n=int(input("enter the power to be rised: "))
+    print(find_power(x,n))
+if __name__=="__main__":
     main()
+
+
+
     
     
     
